@@ -28,6 +28,7 @@ def Checkin(desp, sckey):
         except:
             print('\n\n\n|||出错信息如下：|||\n\n\n')
             traceback.print_exc()
+           pushWechat(desp, sckey)
             return 404
         time.sleep(2)
         browser.find_element_by_xpath('//*[@id="username"]').send_keys(input())
