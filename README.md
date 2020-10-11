@@ -8,7 +8,7 @@
 
 
 ### 二、设置账号密码
-前往 serverchan（http://sc.ftqq.com/） 按照要求绑定微信以便使用签到状态推送功能。
+前往 serverchan（http://sc.ftqq.com/ ） 按照要求绑定微信以便使用签到状态推送功能。
 
 默认只推送 签到失败 的状态，如果想推送其他状态，请前往 checkin.py 自行修改。
 
