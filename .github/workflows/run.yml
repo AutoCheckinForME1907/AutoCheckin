@@ -39,9 +39,11 @@ jobs:
       run: |
         user='${{ secrets.USER }}'
         pwd='${{ secrets.PWD }}'
+        sckey='${{ secrets.SCKEY }}'
         
         user_list=()
         pwd_list=()
+        sckey_list=()
 
         IFS="#"
 
@@ -54,7 +56,12 @@ jobs:
         do
         pwd_list[${#pwd_list[*]}]=${p}
         done
-
+        
+        for s in ${sckey[*]}
+        do
+        sckey_list[${#sckey_list[*]}]=${s}
+        done
+        
         user_num=${#user_list[*]}
         pwd_num=${#pwd_list[*]}
 
@@ -68,6 +75,7 @@ jobs:
         for ((i=0;i<$user_num;i++))
         do
         python3 checkin.py <<EOF
+        ${sckey_list[$i]}
         ${user_list[$i]}
         ${pwd_list[$i]}
         EOF
