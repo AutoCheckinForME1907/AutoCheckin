@@ -38,7 +38,7 @@
 >
 > 能看到如下图所示，表示成功
 
-![image-20201011202209081](https://i.loli.net/2020/10/11/NDWt9ULzjfGpxeM.png)
+![image-20201011202209081](https://i.loli.net/2020/10/11/pb5HyziBFCRt93c.png)
 
 
 ## 注意事项
