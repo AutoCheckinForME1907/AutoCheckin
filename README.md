@@ -8,13 +8,18 @@
 
 
 ### 二、设置账号密码
-添加名为 **USER**、**PWD** 的变量，值分别为 **学号**、**密码 **
+前往 serverchan（http://sc.ftqq.com/） 按照要求绑定微信以便使用签到状态推送功能。
+
+添加名为 **USER**、**PWD**、**SCKEY** 的变量，值分别为 **学号**、**密码**、**从serverchan获得的SCKEY**
 
 > Settings-->Secrets-->New secret
 
 支持多账号，账号之间与密码之间用 ***#*** 分隔，账号与密码的个数要对应
 
 示例：**USER:200806185946#201542356981**，**PWD:cxkjntm#jntmcxk**
+
+若要使用多账号，请在SCKEY中同样以 **#** 隔开每个SCKEY，不论是否你只想使用一个微信账号接收推送。
+
 ![image-20200727142753175](https://i.loli.net/2020/07/27/xjri3p4qdchaf2G.png)
 
 ### 三、启用 Action
