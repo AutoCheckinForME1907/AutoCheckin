@@ -22,7 +22,7 @@
 
 若要使用多账号，请在SCKEY中同样以 **#** 隔开每个SCKEY，不论是否你只想使用一个微信账号接收推送。
 
-![image-20200727142753175](https://i.loli.net/2020/07/27/xjri3p4qdchaf2G.png)
+![image-20201011202253175](https://i.loli.net/2020/10/11/g9ptbAYzEeQOKF5.png)
 
 ### 三、启用 Action
 1. 点击 ***Actions***，再点击 **I understand my workflows, go ahead and enable them**
@@ -31,14 +31,14 @@
 
 2. 点击右上角的 ***Star***
 
-   ![image-20200727142617807](https://i.loli.net/2020/07/27/3cXnHYIbOxfQDZh.png)
+   ![image-20201011202217087](https://i.loli.net/2020/07/27/3cXnHYIbOxfQDZh.png)
 
 ### 四、查看运行结果
 > Actions --> 签到 --> build
 >
 > 能看到如下图所示，表示成功
 
-![image-20200727143009081](https://i.loli.net/2020/10/11/NDWt9ULzjfGpxeM.png)
+![image-20201011202209081](https://i.loli.net/2020/10/11/NDWt9ULzjfGpxeM.png)
 
 
 ## 注意事项
@@ -47,4 +47,4 @@
 
 2. 可以通过 ***Star*** 手动启动一次。
 
-   ![image-20200727142617807](https://i.loli.net/2020/07/27/87oQeLJOlZvU3Ep.png)
+   ![image-20201011202217807](https://i.loli.net/2020/07/27/87oQeLJOlZvU3Ep.png)
