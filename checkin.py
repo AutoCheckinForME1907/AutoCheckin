@@ -26,6 +26,7 @@ def Checkin(desp, sckey):
             browser.get('https://xmuxg.xmu.edu.cn/app/214')
             browser.find_element_by_xpath('//*[@id="loginLayout"]/div[3]/div[2]/div/button[2]').click()
         except:
+            print('\n\n\n|||出错信息如下：|||\n\n\n')
             traceback.print_exc()
             return 404
         time.sleep(2)
@@ -51,6 +52,7 @@ def Checkin(desp, sckey):
         if b1.text.find('是 Yes') != -1:
             return 2
         elif b1.text.find('请选择') != -1:
+            print('\n\n\n|||出错信息如下：|||\n\n\n')
             traceback.print_exc()
             return 404
         else:
@@ -65,6 +67,7 @@ def Checkin(desp, sckey):
             return 1
 
     except Exception as e:
+        print('\n\n\n|||出错信息如下：|||\n\n\n')
         traceback.print_exc()
         pushWechat(desp, sckey)
         browser.quit()
