@@ -1,15 +1,15 @@
 import sys
 import time
+import requests
+import datetime
 import traceback
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-import time
-import requests
- 
+
 def pushWechat(desp, sckey):    #微信推送函数，默认只推送 签到失败 的状态，如果要推送其他状态，请在文件最后输出的部分添加 'pushWechat(desp, sckey)'
     send_url='https://sc.ftqq.com/' + sckey + '.send'
     params = {
-        'text': '签到失败: '+ time.strftime('%Y-%m-%d %H:%M:%S'),
+        'text': '签到失败: '+ (datetime.datetime.utcnow() + datetime.timedelta(hours=8)).strftime('%Y-%m-%d %H:%M:%S'),
         'desp': desp
     }
     requests.post(send_url,params=params)
@@ -28,7 +28,7 @@ def Checkin(desp, sckey):
         except:
             print('\n\n\n|||出错信息如下：|||\n\n\n')
             traceback.print_exc()
-           pushWechat(desp, sckey)
+            pushWechat(desp, sckey)
             return 404
         time.sleep(2)
         browser.find_element_by_xpath('//*[@id="username"]').send_keys(input())
