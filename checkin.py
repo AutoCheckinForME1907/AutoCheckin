@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 import time
 import requests
 
-def pushWechat(desp, sckey):    #微信推送函数，默认只推送 签到失败 的状态，如果要推送其他状态，请在文件最后输出的部分添加 'pushWechat(desp, sckey)' 
+def pushWechat(desp, sckey):    #微信推送函数，默认只推送 签到失败 的状态，如果要推送其他状态，请在文件最后输出的部分添加 'pushWechat(desp, sckey)'
     send_url='https://sc.ftqq.com/' + sckey + '.send'
     params = {
         'text': '签到失败: '+ time.strftime('%Y-%m-%d %H:%M:%S'),
@@ -22,8 +22,12 @@ def Checkin(desp, sckey):
 
     browser = webdriver.Chrome('/usr/bin/chromedriver',options=chrome_options)
     try:
-        browser.get('https://xmuxg.xmu.edu.cn/app/214')
-        browser.find_element_by_xpath('//*[@id="loginLayout"]/div[3]/div[2]/div/button[2]').click()
+        try:
+            browser.get('https://xmuxg.xmu.edu.cn/app/214')
+            browser.find_element_by_xpath('//*[@id="loginLayout"]/div[3]/div[2]/div/button[2]').click()
+        except:
+            traceback.print_exc()
+            return 404
         time.sleep(2)
         browser.find_element_by_xpath('//*[@id="username"]').send_keys(input())
         browser.find_element_by_xpath('//*[@id="password"]').send_keys(input())
@@ -46,6 +50,9 @@ def Checkin(desp, sckey):
         b1 = browser.find_element_by_xpath('//*[@id="select_1582538939790"]/div')
         if b1.text.find('是 Yes') != -1:
             return 2
+        elif b1.text.find('请选择') != -1:
+            traceback.print_exc()
+            return 404
         else:
             b1.click()
             browser.find_element_by_xpath('/html/body/div[8]/ul/div/div[3]').click()
@@ -72,6 +79,8 @@ elif status == 2:
     print('\n\n\n|||您今日已经签到过一次，请勿重复签到|||\n\n\n')
 elif status == -1:
     print('\n\n\n|||签到失败，请检查网络或者账号设置|||\n\n\n')
+elif status == 404:
+    print('\n\n\n|||连接签到网站出错，等等再试|||\n\n\n')
 
 sys.exit(0)
 exit()
