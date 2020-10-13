@@ -1,16 +1,19 @@
-# test
+#=================================================
+# https://github.com/AutoCheckinForME1907/AutoCheckin
+# Description: AutoCheckin for XMU
+# Lisence: MIT
+# Author: AutoCheckin
+#=================================================
 
-name: 签到
+name: AutoCheckin
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: 
+
   schedule:
-    - cron: 0 0,2 * * *
-  watch:
-    types: started
+     - cron: '30 23,1 * * *'
+  
+  watch:  
+     types: [started]
 
 jobs:
   build:
