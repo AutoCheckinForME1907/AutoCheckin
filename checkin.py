@@ -52,8 +52,6 @@ def Checkin(desp, sckey):
         b1 = browser.find_element_by_xpath('//*[@id="select_1582538939790"]/div')
         if b1.text.find('是 Yes') != -1:
             return 2
-        elif b1.text.find('请选择') != -1:
-            return 999
         else:
             b1.click()
             browser.find_element_by_xpath('/html/body/div[8]/ul/div/div[3]').click()
@@ -83,8 +81,6 @@ elif status == -1:
     print('\n\n\n|||签到失败，请检查网络或者账号设置|||\n\n\n')
 elif status == 404:
     print('\n\n\n|||连接签到网站出错，等等再试|||\n\n\n')
-elif status == 999:
-    print('\n\n\n|||目前不是可签到时间|||\n\n\n')
 
 sys.exit(0)
 exit()
